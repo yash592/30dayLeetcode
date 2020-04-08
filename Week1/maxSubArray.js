@@ -17,21 +17,23 @@
 
 // add to
 
+const arr = [-2, 1, -3, 4, -1, 2, 1, -5, 4];
+
 const maxSubArray = (nums) => {
-  let currentSum = 0;
-  let initialMaxSum = nums[0];
+  let maxSumHere = 0;
+  let maxSum = 0;
 
-  for (let i = 1; i < nums.length; i++) {
-    currentSum = initialMaxSum + nums[i];
-
-    console.log(currentSum);
-
-    if (currentSum > initialMaxSum) {
-      initialMaxSum = currentSum;
-    }
-
-    // console.log(currentSum, initialMaxSum);
+  for (let i = 0; i < nums.length; i++) {
+    maxSumHere += nums[i];
+    maxSumHere < 0 ? (maxSumHere = 0) : maxSumHere;
+    maxSumHere > maxSum ? (maxSum = maxSumHere) : 0;
   }
+  if (maxSum === 0) {
+    return Math.min(...arr);
+  }
+  return maxSum;
 };
 
-maxSubArray([-2, 1, -3, 4, -1, 2, 1, -5, 4]);
+console.log(maxSubArray(arr));
+
+console.log(Math.min(...arr));
