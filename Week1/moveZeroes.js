@@ -31,6 +31,33 @@ const moveZeroes = (arr) => {
 
 // optimal solution
 
+const optimalMoveZeroes = (arr) => {
+  let i = 0;
+  let j = 1;
+
+  if (!arr.includes(0)) return arr;
+
+  while (j < arr.length) {
+    if (arr[i] === 0 && arr[j] === 0) {
+      j++;
+    } else if (arr[j] - arr[i] === arr[j]) {
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+      i++;
+      j++;
+    } else if (arr[j] - arr[i] !== 0) {
+      i++;
+      j++;
+    }
+  }
+  return arr;
+};
+
 const nums = [0, 1, 0, 3, 12];
 
-console.log(moveZeroes(nums));
+const nums1 = [0, 0, 0, 0, 1, 2];
+
+const nums2 = [4, 2, 4, 0, 0, 3, 0, 5, 1, 0];
+
+console.log(optimalMoveZeroes(nums2));
+
+console.log(moveZeroes(nums2));
