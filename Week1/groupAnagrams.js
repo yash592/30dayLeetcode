@@ -14,7 +14,7 @@
  strings
  We follow a similar idea here where we will build
   a hashmap of the split letters of each element of the array
- and store their anagrams as the value of the keys(split letters)
+ and store their anagrams as the value of the keys(split letters)∏
 
 
  for each element of the array:

@@ -25,7 +25,14 @@
 
 const countElements = (arr) => {
   let count = 0;
+  /*
 
+  instantiate a count variable
+  loop through the array
+    check if array includes arr[i] + 1, if true then increment count
+  return count
+
+  */
   arr.forEach((element) => {
     if (arr.includes(element + 1)) count++;
   });
@@ -33,5 +40,5 @@ const countElements = (arr) => {
   return count;
 };
 
-console.log(countElements([1, 2, 3]));
-console.log(countElements([1, 1, 3, 3, 5, 5, 7, 7]));
+console.log(countElements([1, 2, 3])); // 2
+console.log(countElements([1, 1, 3, 3, 5, 5, 7, 7])); // 0
